@@ -1,0 +1,7 @@
+[
+null,
+{"id":1,"list":[{"code":355,"indent":0,"parameters":["var a = $gameActors.actor(1);"]},{"code":655,"indent":0,"parameters":["var img = \"%main1-1\"; // Hình mặc định tay không"]},{"code":655,"indent":0,"parameters":["if (a) {"]},{"code":655,"indent":0,"parameters":["  if ($dataWeapons[6] && a.hasWeapon($dataWeapons[6])) img = \"%main2-1\";"]},{"code":655,"indent":0,"parameters":["  else if ($dataWeapons[5] && a.hasWeapon($dataWeapons[5])) img = \"%main1-1\";"]},{"code":655,"indent":0,"parameters":["  "]},{"code":655,"indent":0,"parameters":["  if (a.characterName() !== img) {"]},{"code":655,"indent":0,"parameters":["      a.setCharacterImage(img, 0);"]},{"code":655,"indent":0,"parameters":["      $gamePlayer.refresh();"]},{"code":655,"indent":0,"parameters":["  }"]},{"code":655,"indent":0,"parameters":["}"]},{"code":230,"indent":0,"parameters":[5]},{"code":0,"indent":0,"parameters":[]}],"name":"Cập nhật hình ảnh vũ khí","switchId":1,"trigger":2},
+{"id":2,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":3,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":4,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0}
+]

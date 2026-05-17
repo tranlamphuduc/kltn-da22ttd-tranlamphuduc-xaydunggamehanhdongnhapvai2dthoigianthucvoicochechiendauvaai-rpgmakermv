@@ -1,0 +1,820 @@
+{
+  "Harold": {
+    "name": "Harold",
+    "cols": 7,
+    "rows": 8,
+    "anchorX": 0.37,
+    "anchorY": 0.75,
+    "sampleImg": "J:\\Markevil\\Documents\\Games\\Project13\\img\\characters\\%Harold-1.png",
+    "poses": {
+      "idle2": {
+        "name": "idle2",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          1
+        ]
+      },
+      "idle4": {
+        "name": "idle4",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          8
+        ]
+      },
+      "idle6": {
+        "name": "idle6",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          15
+        ]
+      },
+      "idle8": {
+        "name": "idle8",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          22
+        ]
+      },
+      "move2": {
+        "name": "move2",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          0,
+          1,
+          2,
+          1
+        ]
+      },
+      "move4": {
+        "name": "move4",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          7,
+          8,
+          9,
+          8
+        ]
+      },
+      "move6": {
+        "name": "move6",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          14,
+          15,
+          16,
+          15
+        ]
+      },
+      "move8": {
+        "name": "move8",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          21,
+          22,
+          23,
+          22
+        ]
+      },
+      "attack2": {
+        "name": "attack2",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          5,
+          4,
+          3,
+          3
+        ]
+      },
+      "attack4": {
+        "name": "attack4",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          12,
+          11,
+          10,
+          10
+        ]
+      },
+      "attack6": {
+        "name": "attack6",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          17,
+          18,
+          19,
+          19
+        ]
+      },
+      "attack8": {
+        "name": "attack8",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          26,
+          25,
+          24,
+          24
+        ]
+      },
+      "hurt2": {
+        "name": "hurt2",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          6
+        ]
+      },
+      "hurt4": {
+        "name": "hurt4",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          13
+        ]
+      },
+      "hurt6": {
+        "name": "hurt6",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          20
+        ]
+      },
+      "hurt8": {
+        "name": "hurt8",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          27
+        ]
+      }
+    }
+  },
+  "main1": {
+    "name": "main1",
+    "cols": 12,
+    "rows": 8,
+    "anchorX": 0.5,
+    "anchorY": 1,
+    "sampleImg": "C:\\Users\\KaToZaMaTa\\Downloads\\Project13\\img\\characters\\%main1-1.png",
+    "poses": {
+      "idle2": {
+        "name": "idle2",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          4
+        ]
+      },
+      "idle4": {
+        "name": "idle4",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          16
+        ]
+      },
+      "idle6": {
+        "name": "idle6",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          28
+        ]
+      },
+      "idle8": {
+        "name": "idle8",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          40
+        ]
+      },
+      "move2": {
+        "name": "move2",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          6,
+          7,
+          8,
+          7
+        ]
+      },
+      "move4": {
+        "name": "move4",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          18,
+          19,
+          20,
+          19
+        ]
+      },
+      "move6": {
+        "name": "move6",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          30,
+          31,
+          32,
+          31
+        ]
+      },
+      "move8": {
+        "name": "move8",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          42,
+          43,
+          44,
+          43
+        ]
+      },
+      "attack2": {
+        "name": "attack2",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          9,
+          9,
+          48,
+          48
+        ]
+      },
+      "attack4": {
+        "name": "attack4",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          21,
+          21,
+          60,
+          60
+        ]
+      },
+      "attack6": {
+        "name": "attack6",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          33,
+          33,
+          72,
+          72
+        ]
+      },
+      "attack8": {
+        "name": "attack8",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          45,
+          45,
+          84,
+          84
+        ]
+      },
+      "hurt2": {
+        "name": "hurt2",
+        "speed": 155,
+        "adjust": false,
+        "pattern": [
+          52
+        ]
+      },
+      "hurt4": {
+        "name": "hurt4",
+        "speed": 155,
+        "adjust": false,
+        "pattern": [
+          64
+        ]
+      },
+      "hurt6": {
+        "name": "hurt6",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          76
+        ]
+      },
+      "hurt8": {
+        "name": "hurt8",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          88
+        ]
+      }
+    }
+  },
+  "main2": {
+    "name": "main2",
+    "cols": 12,
+    "rows": 8,
+    "anchorX": 0.5,
+    "anchorY": 1,
+    "sampleImg": "C:\\Users\\KaToZaMaTa\\Downloads\\Project13\\img\\characters\\%main2-1.png",
+    "poses": {
+      "idle2": {
+        "name": "idle2",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          4
+        ]
+      },
+      "idle4": {
+        "name": "idle4",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          16
+        ]
+      },
+      "idle6": {
+        "name": "idle6",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          28
+        ]
+      },
+      "idle8": {
+        "name": "idle8",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          40
+        ]
+      },
+      "move2": {
+        "name": "move2",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          6,
+          7,
+          8,
+          7
+        ]
+      },
+      "move4": {
+        "name": "move4",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          18,
+          19,
+          20,
+          19
+        ]
+      },
+      "move6": {
+        "name": "move6",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          30,
+          31,
+          32,
+          31
+        ]
+      },
+      "move8": {
+        "name": "move8",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          42,
+          43,
+          44,
+          43
+        ]
+      },
+      "attack2": {
+        "name": "attack2",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          10,
+          10,
+          48,
+          48
+        ]
+      },
+      "attack4": {
+        "name": "attack4",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          22,
+          22,
+          60,
+          60
+        ]
+      },
+      "attack6": {
+        "name": "attack6",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          33,
+          33,
+          72,
+          72
+        ]
+      },
+      "attack8": {
+        "name": "attack8",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          46,
+          46,
+          84,
+          84
+        ]
+      },
+      "hurt2": {
+        "name": "hurt2",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          52
+        ]
+      },
+      "hurt4": {
+        "name": "hurt4",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          63
+        ]
+      },
+      "hurt6": {
+        "name": "hurt6",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          76
+        ]
+      },
+      "hurt8": {
+        "name": "hurt8",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          88
+        ]
+      }
+    }
+  },
+  "duc1": {
+    "name": "duc1",
+    "cols": 12,
+    "rows": 8,
+    "anchorX": 0.5,
+    "anchorY": 1,
+    "sampleImg": "C:\\Users\\KaToZaMaTa\\Downloads\\Project13\\img\\characters\\%duc1-1.png",
+    "poses": {
+      "idle2": {
+        "name": "idle2",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          1
+        ]
+      },
+      "idle4": {
+        "name": "idle4",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          13
+        ]
+      },
+      "idle6": {
+        "name": "idle6",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          25
+        ]
+      },
+      "idle8": {
+        "name": "idle8",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          37
+        ]
+      },
+      "move2": {
+        "name": "move2",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          0,
+          1,
+          2,
+          1
+        ]
+      },
+      "move4": {
+        "name": "move4",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          12,
+          13,
+          14,
+          13
+        ]
+      },
+      "move6": {
+        "name": "move6",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          24,
+          25,
+          26,
+          25
+        ]
+      },
+      "move8": {
+        "name": "move8",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          36,
+          37,
+          38,
+          37
+        ]
+      },
+      "attack2": {
+        "name": "attack2",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          48,
+          48,
+          49,
+          49,
+          50,
+          50
+        ]
+      },
+      "attack4": {
+        "name": "attack4",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          60,
+          60,
+          61,
+          61,
+          62,
+          62
+        ]
+      },
+      "attack6": {
+        "name": "attack6",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          74,
+          74,
+          73,
+          73,
+          72,
+          72
+        ]
+      },
+      "attack8": {
+        "name": "attack8",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          84,
+          84,
+          85,
+          85,
+          86,
+          86
+        ]
+      },
+      "hurt2": {
+        "name": "hurt2",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          1
+        ]
+      },
+      "hurt4": {
+        "name": "hurt4",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          13
+        ]
+      },
+      "hurt6": {
+        "name": "hurt6",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          25
+        ]
+      },
+      "hurt8": {
+        "name": "hurt8",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          37
+        ]
+      }
+    }
+  },
+  "duc2": {
+    "name": "duc2",
+    "cols": 12,
+    "rows": 8,
+    "anchorX": 0.5,
+    "anchorY": 1,
+    "sampleImg": "C:\\Users\\KaToZaMaTa\\Downloads\\Project13\\img\\characters\\%duc2-1.png",
+    "poses": {
+      "idle2": {
+        "name": "idle2",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          1
+        ]
+      },
+      "idle4": {
+        "name": "idle4",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          13
+        ]
+      },
+      "idle6": {
+        "name": "idle6",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          25
+        ]
+      },
+      "idle8": {
+        "name": "idle8",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          37
+        ]
+      },
+      "move2": {
+        "name": "move2",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          6,
+          7,
+          8,
+          7
+        ]
+      },
+      "move4": {
+        "name": "move4",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          18,
+          19,
+          20,
+          19
+        ]
+      },
+      "move6": {
+        "name": "move6",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          30,
+          31,
+          32,
+          31
+        ]
+      },
+      "move8": {
+        "name": "move8",
+        "speed": 13,
+        "adjust": false,
+        "pattern": [
+          42,
+          43,
+          44,
+          43
+        ]
+      },
+      "attack2": {
+        "name": "attack2",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          3,
+          3,
+          4,
+          4
+        ]
+      },
+      "attack4": {
+        "name": "attack4",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          15,
+          15,
+          16,
+          16
+        ]
+      },
+      "attack6": {
+        "name": "attack6",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          27,
+          27,
+          28,
+          28
+        ]
+      },
+      "attack8": {
+        "name": "attack8",
+        "speed": 6,
+        "adjust": false,
+        "pattern": [
+          39,
+          39,
+          40,
+          40
+        ]
+      },
+      "hurt2": {
+        "name": "hurt2",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          1
+        ]
+      },
+      "hurt4": {
+        "name": "hurt4",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          13
+        ]
+      },
+      "hurt6": {
+        "name": "hurt6",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          25
+        ]
+      },
+      "hurt8": {
+        "name": "hurt8",
+        "speed": 15,
+        "adjust": false,
+        "pattern": [
+          37
+        ]
+      }
+    }
+  }
+}
