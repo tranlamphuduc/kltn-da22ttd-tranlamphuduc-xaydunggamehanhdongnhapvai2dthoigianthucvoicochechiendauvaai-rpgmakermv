@@ -3100,13 +3100,14 @@ function Game_CharacterAgro() {
   };
 
   Game_CharacterBase.prototype.updateABS = function() {
+    if (!this.battler()) return; // Safety check
     if (this.battler().isDead()) {
       if (!this._isDead) {
         this.onDeath();
       }
       return;
     }
-    this._agro.update();
+    if (this._agro) this._agro.update(); // Safety check for _agro
     this.updateSkills();
     this.battler().updateABS();
   };
@@ -3365,9 +3366,28 @@ function Game_CharacterAgro() {
 
   Game_Player.prototype.updateABSInput = function() {
     var absKeys = $gameSystem.absKeys();
+    if (!absKeys) {
+      // Try to reinitialize absKeys if missing
+      if ($gameSystem.resetABSKeys) {
+        $gameSystem.resetABSKeys();
+        absKeys = $gameSystem.absKeys();
+      }
+      if (!absKeys) return;
+    }
     for (var key in absKeys) {
       if (!absKeys[key]) continue;
       var inputs = absKeys[key].input;
+      if (!inputs || !Array.isArray(inputs) || inputs.length === 0) {
+        // If inputs invalid, try to reinitialize
+        if ($gameSystem.resetABSKeys) {
+          $gameSystem.resetABSKeys();
+          absKeys = $gameSystem.absKeys();
+          if (!absKeys[key] || !absKeys[key].input) continue;
+          inputs = absKeys[key].input;
+        } else {
+          continue;
+        }
+      }
       for (var i = 0; i < inputs.length; i++) {
         var input = inputs[i];
         if (Input.isTriggered(input) || Input.isPressed(input)) {
@@ -3573,7 +3593,8 @@ function Game_CharacterAgro() {
       this._onDeath = this._battler._onDeath;
       this._noPopup = this._battler._noPopup;
       this._dontErase = this._battler._dontErase;
-      this._team = this._battler._team;
+      var team = /<team:([0-9]*?)>/i.exec(this.notes());
+      this._team = team ? Number(team[1]) : this._battler._team;
       this._isDead = false;
     }
   };
@@ -3615,8 +3636,37 @@ function Game_CharacterAgro() {
   var Alias_Game_Event_bestTarget = Game_Event.prototype.bestTarget;
   Game_Event.prototype.bestTarget = function() {
     var best = Alias_Game_Event_bestTarget.call(this);
-    if (!best && this.team() === 2) {
-      return $gamePlayer;
+    if (!best) {
+      var myTeam = this.team();
+      if (myTeam === 1 || myTeam === 2) {
+        var hostiles = [];
+        if (myTeam === 2 && $gamePlayer.battler() && !$gamePlayer.battler().isDead()) {
+          hostiles.push($gamePlayer);
+        }
+        var events = $gameMap.events();
+        for (var i = 0; i < events.length; i++) {
+          var ev = events[i];
+          if (ev && ev !== this && ev.battler() && !ev.battler().isDead()) {
+            var evTeam = ev.team();
+            if ((myTeam === 1 && evTeam === 2) || (myTeam === 2 && evTeam === 1)) {
+              hostiles.push(ev);
+            }
+          }
+        }
+        var minDist = Infinity;
+        var closest = null;
+        for (var j = 0; j < hostiles.length; j++) {
+          var target = hostiles[j];
+          var dx = target.cx() - this.cx();
+          var dy = target.cy() - this.cy();
+          var dist = dx * dx + dy * dy;
+          if (dist < minDist) {
+            minDist = dist;
+            closest = target;
+          }
+        }
+        return closest;
+      }
     }
     return best;
   };

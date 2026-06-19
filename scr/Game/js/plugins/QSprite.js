@@ -602,7 +602,13 @@ QSprite.json = null;
   Game_CharacterBase.prototype.getAvailableIdlePoses = function() {
     this._availableIdlePoses = [];
     if (this.isQCharacter()) {
-      var poses = this.qSprite().poses;
+      var qsprite = this.qSprite();
+      if (!qsprite || !qsprite.poses) {
+        console.error('QSprite error: Character "' + this._characterName + '" not found in QSprite.json!');
+        console.error('Event ID:', this._eventId, 'Map ID:', this._mapId || $gameMap.mapId());
+        return; // Prevent crash
+      }
+      var poses = qsprite.poses;
       for (var pose in poses) {
         var match = /^idle[a-zA-Z]([0-9]+x)?[12346789]$/.exec(pose);
         if (match) {
@@ -827,6 +833,7 @@ QSprite.json = null;
       if (!pose) return 0;
       var pattern = pose.pattern;
       var i = pattern[this._character._pattern];
+      if (i === undefined) i = pattern[0];
       var x = i % qSprite.cols;
       return x;
     }
@@ -841,6 +848,7 @@ QSprite.json = null;
       if (!pose) return 0;
       var pattern = pose.pattern;
       var i = pattern[this._character._pattern];
+      if (i === undefined) i = pattern[0];
       var x = i % qSprite.cols;
       var y = (i - x) / qSprite.cols;
       return y;

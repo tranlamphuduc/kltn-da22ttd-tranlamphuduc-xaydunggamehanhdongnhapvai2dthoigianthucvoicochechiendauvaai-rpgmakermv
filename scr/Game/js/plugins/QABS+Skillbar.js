@@ -198,7 +198,9 @@ function Sprite_SkillInfo() {
 
   Sprite_Skillbar.prototype.createKeys = function() {
     this._buttons = [];
-    for (var key in $gameSystem.absKeys()) {
+    var absKeys = $gameSystem.absKeys();
+    if (!absKeys) return; // Safety check
+    for (var key in absKeys) {
       var button = new Sprite_SkillButton(key);
       if (this._buttons.length !== 0) {
         button.prev = this._buttons[this._buttons.length - 1]
@@ -259,6 +261,10 @@ function Sprite_SkillInfo() {
   };
 
   Sprite_SkillButton.prototype.setup = function() {
+    // Validate absKeys before setting up
+    if (!$gameSystem || !$gameSystem.absKeys() || !$gameSystem.absKeys()[this._key]) {
+      return;
+    }
     this.createFrame();
     this.createIcon();
     this.createOverlayFrame();
@@ -351,7 +357,12 @@ function Sprite_SkillInfo() {
   };
 
   Sprite_SkillButton.prototype.updateVisiblity = function() {
-    var id = $gameSystem.absKeys()[this._key].skillId;
+    var absKeys = $gameSystem.absKeys();
+    if (!absKeys || !absKeys[this._key]) {
+      this.visible = false;
+      return;
+    }
+    var id = absKeys[this._key].skillId;
     var oldVisible = this.visible;
     this.visible = !!id;
     if (oldVisible !== this.visible) {
@@ -403,13 +414,16 @@ function Sprite_SkillInfo() {
 
   Sprite_SkillButton.prototype.needsRefresh = function() {
     if (QABSSkillbar.requestRefresh) {
-      return this._skillId !== $gameSystem.absKeys()[this._key];
+      var absKeys = $gameSystem.absKeys();
+      if (!absKeys || !absKeys[this._key]) return true;
+      return this._skillId !== absKeys[this._key].skillId;
     }
     return false;
   };
 
   Sprite_SkillButton.prototype.refresh = function() {
     var absKey = $gameSystem.absKeys()[this._key];
+    if (!absKey) return; // Safety check
     this.setSkillId(absKey.skillId);
     this.refreshIcon();
     this.refreshInput();
@@ -429,6 +443,7 @@ function Sprite_SkillInfo() {
 
   Sprite_SkillButton.prototype.refreshInput = function() {
     var absKey = $gameSystem.absKeys()[this._key];
+    if (!absKey || !absKey.input) return; // Safety check
     var input = absKey.input[0] || '';
     if (Imported.QInput) {
       var inputs = absKey.input;
